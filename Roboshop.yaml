@@ -4,16 +4,21 @@
   vars:
     SG_ID: sg-03773a885c8092230
     IMG_ID:  ami-0220d79f3f480ecf5
+    env1: dev
     instances: 
     - mongodb
-    - mysql
+    - catalogue
   tasks:
   - name: Create EC2 Instance
     amazon.aws.ec2_instance:
-      name: "{{ item }}"
+      name: "{{ item }}-{{ env1 }}"
       instance_type: "t3.micro"
       security_group: "{{ SG_ID }}"
       image_id: "{{ IMG_ID }}"
+      tags:
+        Project: roboshop
+        Environment: "{{ env1 }}"
+        Component: "{{ item }}"
     
     loop: "{{ instances }}"
     
