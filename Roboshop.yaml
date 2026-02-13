@@ -36,6 +36,7 @@
       type: A
       value: "{{ item.instances[0].private_ip_address }}"
       ttl: 1
+    loop: "{{ ec2_output.results }}"  
 
     
 
