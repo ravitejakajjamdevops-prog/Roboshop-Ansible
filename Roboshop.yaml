@@ -5,6 +5,7 @@
     SG_ID: sg-03773a885c8092230
     IMG_ID:  ami-0220d79f3f480ecf5
     env1: dev
+    domain_name: kajjam.online
     instances: 
     - mongodb
     - catalogue
@@ -26,7 +27,16 @@
   - name: 
     ansible.builtin.debug:
       msg: "{{ ec2_output }}"
-  
+
+  - name: Create Routr53 Records
+    amazon.aws.route53:
+      state: present
+      zone: "{{ domain_name }}"
+      record: "{{ item.item }}-{{ env1 }}.domain_name"
+      type: A
+      value: "{{ item.instances[0].private_ip_address }}"
+      ttl: 1
+
     
 
   
