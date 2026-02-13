@@ -2,8 +2,8 @@
   hosts: localhost
   connection: local
   vars:
-    SG_ID=sg-03773a885c8092230
-    IMG_ID=ami-0220d79f3f480ecf5
+    SG_ID: sg-03773a885c8092230
+    IMG_ID: ami-0220d79f3f480ecf5
   tasks:
   - name: Create EC2 Instance
     amazon.aws.ec2_instance:
