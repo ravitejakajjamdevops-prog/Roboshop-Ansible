@@ -59,8 +59,8 @@
     amazon.aws.Instance:
       state: absent
       name: "{{ item }}-{{ env1 }}"
-      loop: "{{ instances }}"
-      when: action == "destroy"
+    loop: "{{ instances }}"
+    when: action == "destroy"
 
   - name: Delete R53 record
     amazon.aws.route53:
