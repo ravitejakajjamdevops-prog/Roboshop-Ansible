@@ -25,7 +25,7 @@
   
   - name: download catalogue
     ansible.builtin.get_url:
-      url: /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
+      url: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
       dest: /tmp/catalogue.zip
 
   - name: unarchive catalogue
