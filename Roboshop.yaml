@@ -9,7 +9,7 @@
     - mongodb
     - catalogue
   tasks:
-  - name: Create EC2 Instance
+  - name: Creating EC2 Instance
     amazon.aws.ec2_instance:
       name: "{{ item }}-{{ env1 }}"
       instance_type: "t3.micro"
@@ -21,6 +21,10 @@
         Component: "{{ item }}"
     
     loop: "{{ instances }}"
+    register: ec2_output
+    ansible.builtin.debug:
+      msg: "{{ ec2_output }}"
+  
     
 
   
