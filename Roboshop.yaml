@@ -56,7 +56,7 @@
     - action == "create"
 
   - name: Delete EC2 instance_type
-    amazon.aws.instance:
+    amazon.aws.ec2_instance:
       state: absent
       name: "{{ item }}-{{ env1 }}"
     loop: "{{ instances }}"
