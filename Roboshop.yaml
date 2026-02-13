@@ -4,7 +4,7 @@
   vars:
     SG_ID: sg-03773a885c8092230
     IMG_ID:  ami-0220d79f3f480ecf5
-    instance: 
+    instances: 
     - mongodb
     - mysql
   tasks:
@@ -15,7 +15,7 @@
       security_group: "{{ SG_ID }}"
       image_id: "{{ IMG_ID }}"
     
-    loop: {{ instance }}
+    loop: "{{ instances }}"
     
 
   
