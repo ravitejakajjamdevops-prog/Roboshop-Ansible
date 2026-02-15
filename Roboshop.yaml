@@ -9,6 +9,8 @@
     action: create
     instances: 
     - frontend
+    - mongodb
+    - catalogue
     
   tasks:
   - name: Creating EC2 Instance
