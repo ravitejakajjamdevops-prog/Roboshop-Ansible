@@ -8,8 +8,8 @@
     domain_name: kajjam.online
     action: create
     instances: 
-    - mongodb
-    - catalogue
+    - frontend
+    
   tasks:
   - name: Creating EC2 Instance
     amazon.aws.ec2_instance:
