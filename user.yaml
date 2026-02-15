@@ -32,6 +32,7 @@
     ansible.builtin.unarchive: 
       path: /tmp/user.zip
       dest: /app
+      remote_src: yes
 
   - name: Installing dependencies
     ansible.builtin.npm:
