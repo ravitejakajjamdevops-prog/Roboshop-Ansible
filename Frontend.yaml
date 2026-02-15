@@ -9,13 +9,16 @@
     ansible.builtin.dnf:
       name: nginx
       state: present
-    
-  - name: resatrt nginx
+
+  - name: Enable nginx
     ansible.builtin.service:
       name: nginx
       enabled: yes
-      state: started
-      
+
+  - name: Restart nginx
+    ansible.builtin.service:
+      name: nginx
+      state: restarted
 
   - name: Remove the default content that web server is serving
     ansible.builtin.file:
