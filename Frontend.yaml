@@ -9,7 +9,7 @@
       name: nginx
       state: present
 
-  - name: Remove the default content that web server is serving. 
+  - name: Remove the default content that web server is serving
     ansible.builtin.remove:
       path: /usr/share/nginx/html
       state: absent
