@@ -24,8 +24,8 @@
 
   - name: Download the application code to created app directory.
     ansible.builtin.get_url:
-    url: https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip 
-    dest: /tmp/user.zip
+      url: https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip 
+      dest: /tmp/user.zip
 
   - name: UnZipping the files
     ansible.builtin.unarchive: 
