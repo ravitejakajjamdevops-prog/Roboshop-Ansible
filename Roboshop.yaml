@@ -1,5 +1,5 @@
 - name: Create EC2 Instance and R53 route Record
-  hosts: localhost
+  hosts: all
   connection: local
   vars:
     SG_ID: sg-03773a885c8092230
