@@ -1,5 +1,5 @@
 - name: Create EC2 Instance and R53 route Record
-  hosts: all
+  hosts: localhost
   connection: local
   vars:
     SG_ID: sg-03773a885c8092230
@@ -8,12 +8,9 @@
     domain_name: kajjam.online
     action: create
     instances: 
-    - frontend
     - mongodb
     - catalogue
-    - redis
-    - user
-    - cart
+    
 
   tasks:
   - name: Creating EC2 Instance
